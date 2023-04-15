@@ -19,7 +19,7 @@ void PrintMatrix(int[,] matrix)
 }
 
 
-void CountMatrix(int[,] matrix, int count)
+void CountMatrix(int[,] matrix)
 {
     double sum = 0;
     double result = 0;
@@ -28,7 +28,7 @@ void CountMatrix(int[,] matrix, int count)
     {
         for(int j = 0; j < matrix.GetLength(0); j++)
             sum = sum + matrix[j,i];
-        result = sum / count;
+        result = sum / matrix.GetLength(1);
         Console.WriteLine(result);
         sum = 0;
         result = 0;
@@ -43,4 +43,4 @@ InputMatrix(a);
 PrintMatrix(a);
 Console.WriteLine();
 Console.WriteLine("Среднее арифметическое каждого столбца: ");
-CountMatrix(a, size[0]);
+CountMatrix(a);
